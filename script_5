@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Enter numbers separated by space and press enter to stop: "
+read p
+sorted=$(echo $p | tr " " "\n" | sort -V)
+echo $sorted

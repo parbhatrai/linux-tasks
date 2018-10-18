@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir QACParbhat
+cd QACParbhat
+touch file1.txt file2.txt file3.txt
+echo "hello" > file1.txt
+mkdir childDir
+cp file1.txt childDir
