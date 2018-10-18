@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Enter a directory name: "
+
+read p
+
+if [ -d "$p" ]; then
+echo "Number of files is: $(find "$p" -type f | wc -l)"
+echo "Last modified date of the directory is: $(date -r $p)"
+echo "Largest file is: $(find "$p" -type f -ls | sort -k 7 -r -n | head -1 | awk '{print $11}')"
+echo "Smallest file is: $(find "$p" -type f -ls | sort -k 7 -r -n | tail -n -1 | awk '{print $11}')"
+else
+	echo "ERROR - Provide a valid directory in the path format"
+exit 1
+fi
+

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "Enter a number: "
+read n
+
+array=()
+
+for (( x=1; x<=$n; x++ ));do
+	array+=($x)
+done
+
+for (( x=0; x<$n; x++ ));do
+	if [ $((${array[$x]}%3)) -eq 0 ] && [ $((${array[$x]}%5)) -eq 0 ]; then
+		 echo "${array[$x]} FizzBuzz"
+	elif [ $((${array[$x]}%3)) -eq 0 ]; then
+		echo "${array[$x]} Fizz"
+
+	elif [ $((${array[$x]}%5)) -eq 0 ]; then
+		echo "${array[$x]} Buzz"
+
+	fi
+done
